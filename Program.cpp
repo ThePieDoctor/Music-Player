@@ -61,13 +61,13 @@ private:
 
 public:
     Track() : _title(""), _path(""), _durationSeconds(0) {}
-
+    // Initializes a track with its file path, title, and estimated duration.
     Track(const fs::path& filepath) {
         _path = filepath.string();
         _title = filepath.filename().stem().string();
         _durationSeconds = EstimateDuration(filepath);
     }
-
+    
     std::string GetTitle() const { return _title; }
     std::string GetPath() const { return _path; }
     int GetDurationSeconds() const { return _durationSeconds; }
@@ -86,7 +86,7 @@ private:
     Track* _tracks;
     size_t _capacity;
     size_t _currentIndex;
-
+// Dynamic heap allocation with a max capacity of 50 tracks in the playlist.
 public:
     Playlist() : _tracks(nullptr), _capacity(0), _currentIndex(0) {}
 
@@ -189,7 +189,7 @@ public:
         std::cout << "===============================================================\n";
         std::cout.flush();
     }
-
+    // Check for non-blocking keyboard input
     bool PollKey(char& outKey) const {
         if (_kbhit()) {
             outKey = static_cast<char>(_getch());
@@ -220,14 +220,14 @@ private:
             }
         }
     }
-
+    // Goes to the next track and resets the time.
     void AdvanceTrack() {
         _elapsedSeconds = 0;
         if (!_playlist.NextTrack()) {
             _isRunning = false;
         }
     }
-
+// Initializes the player and starts the main loop
 public:
     MusicPlayer() : _elapsedSeconds(0), _isPaused(false), _isRunning(false) {}
     // Creates a playlist from a directory of mp3 files
