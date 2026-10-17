@@ -6,7 +6,7 @@ In the C++ language I coded a Music Player that will create a playlist of 50 ran
 
 I wanted to make a Music Player program so that I could work on a more user friend UI than I normally make. With this program, the terminal will auto clear and update every second so you can see the progress on the song without clutter. I also worked on a dynamic progress bar so it displays the time left on each song, adapting to how long the song is.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.youtube.com/watch?v=tsYuYsJ4Y3k)
 
 # Development Environment
 
