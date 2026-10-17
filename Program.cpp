@@ -67,7 +67,7 @@ public:
         _title = filepath.filename().stem().string();
         _durationSeconds = EstimateDuration(filepath);
     }
-    
+    // Get title and path of the track
     std::string GetTitle() const { return _title; }
     std::string GetPath() const { return _path; }
     int GetDurationSeconds() const { return _durationSeconds; }
@@ -199,7 +199,7 @@ public:
     }
 };
 
-// Music Player manages playback state, ticks, and user input.
+// Manages playback state, ticks, and user input.
 class MusicPlayer {
 private:
     Playlist _playlist;
